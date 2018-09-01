@@ -19,11 +19,11 @@ var fs = require('fs'),
     //tingpng = require('gulp-tinypng'),
     //imagemin = require('gulp-imagemin'),
     rename = require('gulp-rename'),
-    replace = require('gulp-replace'),
+    replace = require('gulp-replace');
     //base64 = require('gulp-base64'),
     //spritesmith = require('gulp.spritesmith'),
-    size = require('gulp-size'),
-    zip = require('gulp-zip');
+    //size = require('gulp-size'),
+    //zip = require('gulp-zip');
 
 var currentCreative
 var sourceDirectory
@@ -37,9 +37,9 @@ currentCreative = process.env.CURRENT_CREATIVE || 'v1';
 //currentSize = process.env.CURRENT_SIZE || '300x600';
 //currentSize = process.env.CURRENT_SIZE || '160x600';
 
-sourceDirectory = 'src/creatives/' + currentCreative + '/' + currentSize;
-outputDirectory = 'dev/' + currentCreative + '/' + currentSize + '/';
-productionFolder = currentCreative + '_' + currentSize;
+sourceDirectory = 'src/creatives/' + currentCreative;
+outputDirectory = 'dev/' + currentCreative + '/';
+//productionFolder = currentCreative + '_' + currentSize;
 //productionDirectory = 'prod/' + productionFolder;
 
 console.log('currentCreative = ' + currentCreative );
@@ -116,4 +116,5 @@ gulp.task('watch', function() {
 
 
 //DEVELOPMENT
-gulp.task('default', ['html', 'js', 'sass', 'connect', 'watch']);
+gulp.task('default', ['html']);
+//gulp.task('default', ['html', 'js', 'sass', 'connect', 'watch']);
